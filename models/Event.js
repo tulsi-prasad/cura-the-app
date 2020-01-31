@@ -10,17 +10,24 @@ const EventSchema = mongoose.Schema({
         required: true
     },
     toDonate: {
-        type: String
+        type: String,
+        required: true
     },
     donationAmt: {
-        type: Number
+        type: Number,
+        default: 0
     },
-    donerName: {
+    donorName: {
         type: String,
         required: true
     },
     donerFeedback: {
-        type: String
+        type: String,
+        default: ""
+    },
+    date: {
+        type: Date,
+        default: Date.now
     }
 });
 
