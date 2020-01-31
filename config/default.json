@@ -1,0 +1,4 @@
+{
+    "mongoURI": "mongodb+srv://tulsi123:tulsi123@curadb-ptwmk.mongodb.net/test?retryWrites=true&w=majority",
+    "jwtSecret": "secret"
+}
