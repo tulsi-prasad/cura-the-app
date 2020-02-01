@@ -7,6 +7,7 @@ const jwt = require("jsonwebtoken");
 const { check, validationResult } = require("express-validator");
 
 const User = require("../models/User");
+const Profile = require("../models/Profile");
 
 // @route       POST api/users
 // @desc        Register a user
@@ -52,6 +53,14 @@ router.post(
 
             await user.save();
             // res.send("User saved");
+
+            // Add to profile collection
+            const newProfile = new Profile({
+                name,
+                email
+            });
+            
+            const profile = await newProfile.save();
 
             const payload = {
                 user: {
